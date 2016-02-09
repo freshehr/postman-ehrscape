@@ -204,11 +204,11 @@ offset 0 limit 5
 
 In the Ad-hoc query window click on `Params` and enter the query string into the `Value` field on the right hand side, then click the `Send` button.
 
-![Persist composition](./Images/CommitComposition.jpg)
+![Persist composition](./Images/RunAQLQuery.jpg)
 
 The result set contains the last 5 vital signs compositions and the data points within the compositions
 
-![Commit composition result](./Images/CommitCompositionResult.jpg)
+![Commit composition result](./Images/RunAQLQueryResult.jpg)
 
 ## Close session
 The final step is to close the openEHR session.
