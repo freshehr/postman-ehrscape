@@ -164,7 +164,7 @@ Once the template Id is set, we can commit a composition. The following string i
   }
   ```
 
-Navigate to the `Composition` folder and highlight `Commit Composition JSON FLAT`. Paste the text above into the text box on the right hand side and click on the `Send` button.
+Navigate to the `Composition` folder and highlight `Commit Composition JSON FLAT`. Paste the text above into the Body text box on the right hand side and click on the `Send` button.
 
 ![Commit composition](./Images/CommitComposition.jpg)
 
@@ -202,7 +202,7 @@ order by a/context/start_time/value desc
 offset 0 limit 5
 ```
 
-In the Ad-hoc query window click on `Params` and enter the query string into the `Value` field, then click the `Send` button.
+In the Ad-hoc query window click on `Params` and enter the query string into the `Value` field on the right hand side, then click the `Send` button.
 
 ![Persist composition](./Images/CommitComposition.jpg)
 
