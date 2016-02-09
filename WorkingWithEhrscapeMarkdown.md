@@ -96,6 +96,7 @@ where a/name/value= 'Nursing Vital Signs Observations'
 order by a/context/start_time/value desc
 offset 0 limit 1
 ```
+
 In the Ad-hoc Query window click on `Param` and paste the query string above into the `Value` field, then click on the `Send` button.
 
 ![Get Composition Id](./Images/RetrieveCompositionIdString.jpg)
@@ -162,4 +163,58 @@ Once the template Id is set, we can commit a composition. The following string i
     "nursing_vital_signs_observations/vital_signs:0/national_early_warning_score_rcp_uk:0/total_score": 3
   }
   ```
-  
+
+Navigate to the `Composition` folder and highlight `Commit Composition JSON FLAT`. Paste the text above into the text box on the right hand side and click on the `Send` button.
+
+![Commit composition](./Images/CommitComposition.jpg)
+
+The result shows the composition Id for the newly committed composition.
+
+![Commit composition result](./Images/CommitCompositionResult.jpg)
+
+## Run AQL query
+The next step is to run a query on recent vital signs compositions and return a set of key data.
+
+Navigate to the `query` folder and select `Ad-hoc Query`.
+
+This is the query string we are going to use to retrieve the last 5 vital signs compositions and return the relevant readings:
+```
+select
+a/uid/value as compositionId,
+a/context/start_time/value as start_time,
+b_a/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value/magnitude as Rate_magnitude,
+b_b/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as Heart_Rate_magnitude,
+b_c/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as Temperature_magnitude,
+b_f/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude as Systolic_magnitude,
+b_f/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude as Diastolic_magnitude,
+b_g/data[at0001]/events[at0002]/data[at0003]/items[at0006]/value/numerator as spO2_numerator,
+b_h/data[at0001]/events[at0002]/data[at0003]/items[at0028]/value/magnitude as Total_Score_magnitude
+from EHR e[ehr_id/value='{{ehrId}}']
+contains COMPOSITION a[openEHR-EHR-COMPOSITION.encounter.v1]
+contains (OBSERVATION b_a[openEHR-EHR-OBSERVATION.respiration.v1]
+or OBSERVATION b_b[openEHR-EHR-OBSERVATION.pulse.v1]
+or OBSERVATION b_c[openEHR-EHR-OBSERVATION.body_temperature.v1]
+or OBSERVATION b_f[openEHR-EHR-OBSERVATION.blood_pressure.v1]
+or OBSERVATION b_g[openEHR-EHR-OBSERVATION.indirect_oximetry.v1]
+or OBSERVATION b_h[openEHR-EHR-OBSERVATION.news_rcp_uk.v1])
+where a/name/value= 'Nursing Vital Signs Observations'
+order by a/context/start_time/value desc
+offset 0 limit 5
+```
+
+In the Ad-hoc query window click on `Params` and enter the query string into the `Value` field, then click the `Send` button.
+
+![Persist composition](./Images/CommitComposition.jpg)
+
+The result set contains the last 5 vital signs compositions and the data points within the compositions
+
+![Commit composition result](./Images/CommitCompositionResult.jpg)
+
+## Close session
+The final step is to close the openEHR session.
+
+To do this, navigate to the `session` folder and select `Delete Session`. Click on the `Send` button.
+
+The result will show a null sessionId, indicating that there is no open session.
+
+![Close session](./Images/CloseSession.jpg)
