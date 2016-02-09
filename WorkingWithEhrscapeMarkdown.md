@@ -94,5 +94,72 @@ from EHR e[ehr_id/value='{{ehrId}}']
 contains COMPOSITION a[openEHR-EHR-COMPOSITION.encounter.v1]
 where a/name/value= 'Nursing Vital Signs Observations'
 order by a/context/start_time/value desc
-offset 0 limit 1`
+offset 0 limit 1
 ```
+In the Ad-hoc Query window click on `Param` and paste the query string above into the `Value` field, then click on the `Send` button.
+
+![Get Composition Id](./Images/RetrieveCompositionIdString.jpg)
+
+Click the `Scroll to response` button in the buttom right hand corner to display the response details. The `compositionId` element in the response is the unqique identifier for the composition and the `start_time` is the time that the document was authored.
+
+![Get Composition Id result](./Images/RetrieveCompositionIdResult.jpg)
+
+We will use the results of this query to retrieve the full composition, so the final action is to store the composition Id as a preset.
+
+Highlight the string in the response details, right mouse click, set the environment (`C4H Ripple OSI` in this example) and then select `compositionId` from the list of attributes
+
+![Store composition Id](./Images/StoreCompositionIdAsPreset.jpg)
+
+## Retrieve full composition based on compositionId
+The next step is to retrieve the composition itself, based on the compositionId we stored in the previous step.
+
+Navigate to the `composition` folder and highlight `Read Composition JSON FLAT`, then click the `Send` button
+
+![Retrieve Composition](./Images/RetrieveComposition.jpg)
+
+The result is shown as a FLAT JSON file below
+
+![Retrieve composition result](./Images/RetrieveCompositionResult.jpg)
+
+Other formats are JSON RAW, XML RAW or JSON STRUCTURED – the snippets below show part of the Pulse data
+
+![JSON RAW](./Images/RetrieveCompositionResultOtherFormats1.jpg)
+
+![XML RAW](./Images/RetrieveCompositionResultOtherFormats2.jpg)
+
+![JSON STRUCTURED](./Images/RetrieveCompositionResultOtherFormats3.jpg)
+
+## Persist composition
+The next step is to persist a new composition. The data in the composition is validated against a template, and the first action is to set the correct template Id for composition to be persisted.
+
+Navigate to the `Template` folder and highlight `List available templates`, then click the `Send` button. Highlight the `Vital Signs Encounter template` in the list of available templates, right mouse click, set the environment (`C4H Ripple OSI` in this example) and then select `templateId` from the list of attributes
+
+![Set templateId](./Images/ListTemplates.jpg)
+
+Once the template Id is set, we can commit a composition. The following string is an example of a vital signs composition:
+```
+{
+ "ctx/language": "en",
+ "ctx/territory": "GB",
+ "ctx/composer_name": "Hazel Smith",
+ "ctx/time": "2015-12-10T02:19:00.000Z",
+ "ctx/health_care_facility|id": "999999-345",
+ "ctx/health_care_facility|name": "Northumbria Community NHS",
+ "ctx/id_namespace": "NHS-UK",
+ "ctx/id_scheme": "2.16.840.1.113883.2.1.4.3",
+    "nursing_vital_signs_observations/vital_signs:0/respirations:0/any_event:0/rate|magnitude": 22,
+    "nursing_vital_signs_observations/vital_signs:0/respirations:0/any_event:0/rate|unit": "/min",
+    "nursing_vital_signs_observations/vital_signs:0/pulse:0/any_event:0/heart_rate|magnitude": 101,
+    "nursing_vital_signs_observations/vital_signs:0/pulse:0/any_event:0/heart_rate|unit": "/min",
+    "nursing_vital_signs_observations/vital_signs:0/body_temperature:0/any_event:0/temperature|magnitude": 36.6,
+    "nursing_vital_signs_observations/vital_signs:0/body_temperature:0/any_event:0/temperature|unit": "°C",
+    "nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/systolic|magnitude": 100,
+    "nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/systolic|unit": "mm[Hg]",
+    "nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/diastolic|magnitude": 60,
+    "nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/diastolic|unit": "mm[Hg]",
+    "nursing_vital_signs_observations/vital_signs:0/indirect_oximetry:0/any_event:0/spo2|numerator": 94,
+    "nursing_vital_signs_observations/vital_signs:0/indirect_oximetry:0/any_event:0/spo2|denominator": 100,
+    "nursing_vital_signs_observations/vital_signs:0/national_early_warning_score_rcp_uk:0/total_score": 3
+  }
+  ```
+  
