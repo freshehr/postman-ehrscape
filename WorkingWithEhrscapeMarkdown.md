@@ -87,11 +87,11 @@ Open the `query` folder and select `Ad-hoc query`
 
 This is the query string in a format which can be copied and pasted:
 
-> select
+`select
 a/uid/value as compositionId,
 a/context/start_time/value as start_time
 from EHR e[ehr_id/value='{{ehrId}}']
 contains COMPOSITION a[openEHR-EHR-COMPOSITION.encounter.v1]
 where a/name/value= 'Nursing Vital Signs Observations'
 order by a/context/start_time/value desc
-offset 0 limit 1
+offset 0 limit 1`
