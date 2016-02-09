@@ -9,4 +9,4 @@ Find *C4H Ripple OSI.postman_environment* in your email and download it to a fol
 ## Import files into Postman
 Open Postman and select Import
 
-![Import](file://localhost/Users/hildegardfranke/Documents/test%20github/Hildi's%20playpen/Images/ImportFilesIntoPostman.jpg)
+![Import](./Images/ImportFilesIntoPostman.jpg)
