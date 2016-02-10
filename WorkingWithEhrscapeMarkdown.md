@@ -6,7 +6,7 @@ You will have received an email containing the collection and environment files 
 
 Find `NHS_Code4Health_Ehrscape.json.postman_collection` in your email and download it to a folder of your choice (normally the Download folder).
 
-Find `C4H Ripple OSI.postman_environment` in your email and download it to a folder of your choice (normally the Download folder).
+Find `<your_environment_name.postman_environment` in your email and download it to a folder of your choice (normally the Download folder). Please note that for demonstration purposes we are using the `C4H Ripple OSI` environment in this document.
 
 ## Import files into Postman
 Open Postman and select `Import`
@@ -34,7 +34,7 @@ Selecting one of the API calls displays more detail on the right hand side
 
 ![Select Call](./Images/APICallDetail.jpg)
 
-Clicking on the ``x`` icon in the top right hand corner reveals a number of pre-set variables for your selected environment (again the C4H Ripple environment is used just as an example)
+Clicking on the ``x`` icon in the top right hand corner reveals a number of pre-set variables for your selected environment (again the C4H Ripple environment is used just as an example). These pre-sets are used in some of the API calls as defaults.
 
 ![Presets](./Images/Presets.jpg)
 
@@ -45,7 +45,7 @@ We are now ready to start working properly with Ehrscape.
 ## Create Session
 The first step is to create an openEHR session and retrieve the ``sessionId`` token. This allows subsequent API calls to be made without needing to login on each occasion.
 
-Navigate to the `session` folder and highlight `Create Session` on the left, then click on the `Send` button.
+Navigate to the `session` folder and highlight `Create Session` on the left, then click on the `Send` button. The required credentials are automatically filled in from the Pre-sets file (see `Navigating Postman` section above)
 
 ![Create Session](./Images/CreateSession.jpg)
 
@@ -58,7 +58,7 @@ The screenshot below shows the session Id which has been returned in the call.
 ## Get Patient EHR Identifier
 The next step is to get the patient’s internal EHR identifier by sending their external identifier (in this case NHS Number). The ehrId is a unique string which, for security reasons, cannot be associated with the patient, if for instance their openEHR records were leaked.
 
-Select `Get ehrStatus from subjectId` in the `ehr` folder and then click on the `Send` button.
+Select `Get ehrStatus from subjectId` in the `ehr` folder and then click on the `Send` button. Again, the patient’s NHS number is taken from the Pre-sets file and is therefore filled in automatically.
 
 ![Get EhrId](./Images/GetEhrId.jpg)
 
@@ -80,6 +80,8 @@ The name/value of the Composition is the root name of the templates compositio
 The query we need to run in order to get the composition Id for the most recent vital signs composition for the selected patient is as follows:
 
 ![Retrieve Composition Id Explanation](./Images/RetrieveCompositionIdExplanation.jpg)
+
+At this stage you don’t need to worry about the exact syntax and how to create an AQL query. These topics are covered elsewhere, and the Specifications provide the required details.
 
 Open the `query` folder and select `Ad-hoc query`
 
@@ -105,7 +107,7 @@ Click the `Scroll to response` button in the buttom right hand corner to display
 
 ![Get Composition Id result](./Images/RetrieveCompositionIdResult.jpg)
 
-We will use the results of this query to retrieve the full composition, so the final action is to store the composition Id as a preset.
+We will use the results of this query to retrieve the full composition, so the final action is to store the composition Id as a pre-set.
 
 Highlight the string in the response details, right mouse click, set the environment (`C4H Ripple OSI` in this example) and then select `compositionId` from the list of attributes
 
@@ -163,6 +165,7 @@ Once the template Id is set, we can commit a composition. The following string i
     "nursing_vital_signs_observations/vital_signs:0/national_early_warning_score_rcp_uk:0/total_score": 3
   }
   ```
+As mentioned before, the exact syntax and how to create a composition will be covered elsewhere. At this stage you should just use the syntax string provided above.
 
 Navigate to the `Composition` folder and highlight `Commit Composition JSON FLAT`. Paste the text above into the Body text box on the right hand side and click on the `Send` button.
 
@@ -177,7 +180,7 @@ The next step is to run a query on recent vital signs compositions and return a 
 
 Navigate to the `query` folder and select `Ad-hoc Query`.
 
-This is the query string we are going to use to retrieve the last 5 vital signs compositions and return the relevant readings:
+This is the query string we are going to use to retrieve the last 5 vital signs compositions and return the relevant readings. Once again, just to clarify: the exact syntax and how to create an AQL query will be covered elsewhere. At this stage you can just copy and paste the query syntax string shown below:
 ```
 select
 a/uid/value as compositionId,
