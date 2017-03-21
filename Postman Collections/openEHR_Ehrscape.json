@@ -66,10 +66,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": [
@@ -91,10 +88,7 @@
                     "description": ""
                   }
                 ],
-                "body": {
-                  "mode": "formdata",
-                  "formdata": []
-                },
+                "body": {},
                 "description": ""
               },
               "status": "OK",
@@ -192,10 +186,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -223,10 +214,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -254,10 +242,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -285,10 +270,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": "Run a 'native' EtherCis query. Not supported by Think!Ehr."
           },
           "response": []
@@ -430,10 +412,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -466,10 +445,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -502,10 +478,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -574,10 +547,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -586,7 +556,7 @@
           "_postman_id": "6e822cc0-d8e7-6991-3dfa-1a77fa2f6179",
           "name": "Delete Demographics Party by SubjectID",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/demographics/party/{{subjectId}}",
+            "url": "{{openEhrApi}}/rest/v1/demographics/party/{{partyId}}",
             "method": "DELETE",
             "header": [
               {
@@ -610,10 +580,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -653,10 +620,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -689,10 +653,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -816,10 +777,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": "Returns an OpenEhr template in its web-appropriate representation (as a JSON object).\n\nA note on languages: the web template will be generated with localized names for all the languages that the underlying template supports, unless it is specified differently via the defaultLanguage and languages query parameters, both of which are optional. The defaultLanguage parameter determines the default name for each web template node (the localizedName property), whereas the languages parameter will generate additional localized names inside the localizedNames map for all the languages listed in this parameter (different languages should be separated by a comma: en,sl,no). See the example below.\n\nNote that the underlying OpenEhr template needs to support these languages, or else a 400 error (bad request) will be returned (TMPL-3061).\n"
           },
           "response": []
@@ -922,10 +880,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": "Resource Url\n\nhttps://ehrscape.code-4-health.org/rest/v1/template/{templateId}/example\nParameters\n\nParameter\tValue\tDescription\tParameter Type\tData Type\ntemplateId\nrequired\n\tThe ID of the template to load.\tpath\tstring\ndefaultLanguage\noptional\n\tThe default language to generate the web template with.\tquery\tstring\nlanguages\noptional\n\tOther languages to include in the web template, separated by a comma.\tquery\tstring\nformat\noptional\n\nThe format of JSON representation of the example composition to return. Default: FLAT.\tquery\tenum\nexampleFilter\noptional\n\nThe type of example to produce - intended for input (sent to the server), output (received back from the server) etc.\tquery\tenum\nTry it out!\nImplementation Notes\n\nReturns an example of data values for a ThinkEhr web template.\n\nThis method will show all the web template paths that can be filled out in order to successfully save a composition in the web template format. It will do its best to generate legal exampledata values for those paths, taking into account the data type and validation constraints.\n\nTwo parameters control the output of this call. The format parameter controls whether the produced output will be the web template composition values in either the FLAT or the STRUCTURED (hierarchical) JSON format. The exampleFilter parameter controls whether the example will show the values as they would be submitted to the server (INPUT) or received from the server (OUTPUT), since the latter one is more detailed.\n\nThe two language parameters determine the languages that the web template will be generated with before its example values will be produced and returned. See the documentation for the {templateId} call for more information on web template languages.\n"
           },
           "response": []
@@ -970,10 +925,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": "Resource Url\n\nhttps://ehrscape.code-4-health.org/rest/v1/template/{templateId}/example\nParameters\n\nParameter\tValue\tDescription\tParameter Type\tData Type\ntemplateId\nrequired\n\tThe ID of the template to load.\tpath\tstring\ndefaultLanguage\noptional\n\tThe default language to generate the web template with.\tquery\tstring\nlanguages\noptional\n\tOther languages to include in the web template, separated by a comma.\tquery\tstring\nformat\noptional\n\nThe format of JSON representation of the example composition to return. Default: FLAT.\tquery\tenum\nexampleFilter\noptional\n\nThe type of example to produce - intended for input (sent to the server), output (received back from the server) etc.\tquery\tenum\nTry it out!\nImplementation Notes\n\nReturns an example of data values for a ThinkEhr web template.\n\nThis method will show all the web template paths that can be filled out in order to successfully save a composition in the web template format. It will do its best to generate legal exampledata values for those paths, taking into account the data type and validation constraints.\n\nTwo parameters control the output of this call. The format parameter controls whether the produced output will be the web template composition values in either the FLAT or the STRUCTURED (hierarchical) JSON format. The exampleFilter parameter controls whether the example will show the values as they would be submitted to the server (INPUT) or received from the server (OUTPUT), since the latter one is more detailed.\n\nThe two language parameters determine the languages that the web template will be generated with before its example values will be produced and returned. See the documentation for the {templateId} call for more information on web template languages.\n"
           },
           "response": []
@@ -1017,10 +969,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": "Returns a list of template ids (as a JSON object).\n\nExample of a successful call response:\n\n{\n  \"templates\": [\n    {\n      \"templateId\": \"Allergies\",\n      \"createdOn\": \"2014-03-28T11:12:51.242Z\"\n    },\n    {\n      \"templateId\": \"Vital Signs\",\n      \"createdOn\": \"2014-03-28T11:12:51.277Z\"\n    }\n  ]\n}\n"
           },
           "response": []
@@ -1056,10 +1005,7 @@
                 "disabled": true
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -1147,10 +1093,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -1238,10 +1181,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": "Returns a Think!EHR form denoted by its name and version.\n\nThis call can return only the form and form resource meta-data (the default), or it can already expand the specified (or all) form resources. See the description of the resources parameter for details.\n\nIn the case of resource expansion, for the resources that are of the source type (text, JSON etc.), this method will do its best to transform the resource content into the correct JSON type (for example, a JSON object, or a JSON text node). For binary resources, the content resource property will contain raw bytes."
           },
           "response": []
@@ -1281,10 +1221,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -1317,10 +1254,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": [
@@ -1352,10 +1286,7 @@
                     "description": ""
                   }
                 ],
-                "body": {
-                  "mode": "formdata",
-                  "formdata": []
-                },
+                "body": {},
                 "description": ""
               },
               "status": "OK",
@@ -1452,10 +1383,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -1488,10 +1416,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
@@ -1704,10 +1629,7 @@
                 "description": ""
               }
             ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
+            "body": {},
             "description": ""
           },
           "response": []
