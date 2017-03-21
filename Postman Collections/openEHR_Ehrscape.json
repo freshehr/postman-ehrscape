@@ -554,7 +554,7 @@
         },
         {
           "_postman_id": "6e822cc0-d8e7-6991-3dfa-1a77fa2f6179",
-          "name": "Delete Demographics Party by SubjectID",
+          "name": "Delete Demographics Party by partyID",
           "request": {
             "url": "{{openEhrApi}}/rest/v1/demographics/party/{{partyId}}",
             "method": "DELETE",
