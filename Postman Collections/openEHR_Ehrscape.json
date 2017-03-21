@@ -581,7 +581,7 @@
               }
             ],
             "body": {},
-            "description": ""
+            "description": "This method deletes a party denoted by its id from the remote demographics store, along with all its sub-entities (such as additional info)."
           },
           "response": []
         }
