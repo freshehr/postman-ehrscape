@@ -279,7 +279,7 @@
           "_postman_id": "038cbf6e-1dce-5182-5a5b-f36585a63fbd",
           "name": "All compositions by ehrId and templateId",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/query?aql=select%20c%2Fcontext%2Fstart_time%2Fvalue%20as%20start_time%2C%20c%2Fname%2Fvalue%20as%20name%2C%20c%2Fuid%2Fvalue%20as%20uid%20from%20EHR%20e%20%5Behr_id%2Fvalue%3D'{{ehrId}}'%5D%20contains%20COMPOSITION%20c%20",
+            "url": "{{openEhrApi}}/rest/v1/query?aql=select c/context/start_time/value as start_time, c/name/value as name, c/uid/value as uid from EHR e [ehr_id/value='{{ehrId}}'] contains COMPOSITION c WHERE c/archetype_details/template_id/value = '{{templateId}}'",
             "method": "GET",
             "header": [
               {
