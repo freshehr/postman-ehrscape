@@ -277,7 +277,7 @@
         },
         {
           "_postman_id": "038cbf6e-1dce-5182-5a5b-f36585a63fbd",
-          "name": "All compositions by ehrId and templateId",
+          "name": "All compositions by templateId",
           "request": {
             "url": "{{openEhrApi}}/rest/v1/query?aql=select c/context/start_time/value as start_time, c/name/value as name, c/uid/value as uid from EHR e [ehr_id/value='{{ehrId}}'] contains COMPOSITION c WHERE c/archetype_details/template_id/value = '{{templateId}}'",
             "method": "GET",
