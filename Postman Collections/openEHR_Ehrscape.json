@@ -1851,7 +1851,7 @@
         },
         {
           "_postman_id": "a71d7646-a107-08e2-9857-7090b56a5715",
-          "name": "Get example FLAT INPUT copy",
+          "name": "Get example FLAT STRUCTERED",
           "event": [
             {
               "listen": "prerequest",
