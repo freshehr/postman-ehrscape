@@ -481,7 +481,45 @@
           "_postman_id": "01b69333-3262-9a9b-de76-053ce4fc4db8",
           "name": "Commit Composition JSON FLAT",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition?ehrId={{ehrId}}&templateId={{templateId}}&committerName={{committerName}}&format=FLAT",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition?ehrId={{ehrId}}&templateId={{templateId}}&committerName={{committerName}}&format=FLAT",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition"
+              ],
+              "query": [
+                {
+                  "key": "ehrId",
+                  "value": "{{ehrId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "templateId",
+                  "value": "{{templateId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "committerName",
+                  "value": "{{committerName}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "format",
+                  "value": "FLAT",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "POST",
             "header": [
               {
@@ -507,7 +545,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\"ctx/composer_name\": \"Dr Tony Shannon\",\n\"ctx/composer_id\": \"G33567\",\n\"ctx/health_care_facility|id\": \"999999-345\",\n\"ctx/health_care_facility|name\": \"Ripple Valley Hospital NHS\",\n\"ctx/id_namespace\": \"NHS-UK\",\n\"ctx/id_scheme\": \"2.16.840.1.113883.2.1.4.3\",\n\"ctx/language\": \"en\",\n\"ctx/territory\": \"GB\",\n\"ctx/time\": \"2015-08-03T00:23:02.518+02:00\",\n    \"vital_signs_observations/vital_signs/respirations/rate|magnitude\": 23,\n    \"vital_signs_observations/vital_signs/respirations/rate|unit\": \"/min\",\n    \"vital_signs_observations/vital_signs/respirations/inspired_oxygen/on_air\": false,\n    \"vital_signs_observations/vital_signs/pulse_heart_beat/heart_rate|magnitude\": 45,\n    \"vital_signs_observations/vital_signs/pulse_heart_beat/heart_rate|unit\": \"/min\",\n    \"vital_signs_observations/vital_signs/body_temperature/temperature|magnitude\": 35.4,\n    \"vital_signs_observations/vital_signs/body_temperature/temperature|unit\": \"°C\",\n    \"vital_signs_observations/vital_signs/avpu/avpu_observation|code\": \"at0005\",\n    \"vital_signs_observations/vital_signs/blood_pressure/systolic|magnitude\": 92,\n    \"vital_signs_observations/vital_signs/blood_pressure/systolic|unit\": \"mm[Hg]\",\n    \"vital_signs_observations/vital_signs/blood_pressure/diastolic|magnitude\": 64,\n    \"vital_signs_observations/vital_signs/blood_pressure/diastolic|unit\": \"mm[Hg]\",\n    \"vital_signs_observations/vital_signs/indirect_oximetry/spo2|numerator\": 97,\n    \"vital_signs_observations/vital_signs/indirect_oximetry/spo2|denominator\": 103,\n    \"vital_signs_observations/vital_signs/news_uk_rcp/total_score\": 12\n}"
+              "raw": "{\n    \"ctx/language\": \"en\",\n    \"ctx/territory\": \"GB\",\n    \"ctx/composer_name\": \"Nurse Crachett\",\n    \"ctx/time\": \"2010-04-10\",\n    \"ctx/id_namespace\": \"Hospital\",\n    \"ctx/id_scheme\": \"HOSPITAL-NS\",\n    \"ctx/health_care_facility|name\": \"Marandia DGH\",\n    \"ctx/health_care_facility|id\": \"9095\",\n    \"smart_growth_report/body_weight/weight|magnitude\": 9.8,\n    \"smart_growth_report/body_weight/weight|unit\": \"kg\",\n    \"smart_growth_report/height_length/any_event:0/height_length|magnitude\": 78.5,\n    \"smart_growth_report/height_length/any_event:0/height_length|unit\": \"cm\",\n    \"smart_growth_report/paternal_height/any_event:0/height_length|magnitude\": 177,\n    \"smart_growth_report/paternal_height/any_event:0/height_length|unit\": \"cm\",\n    \"smart_growth_report/maternal_height/any_event:0/height_length|magnitude\": 165,\n    \"smart_growth_report/maternal_height/any_event:0/height_length|unit\": \"cm\",\n    \"smart_growth_report/head_circumference/any_event:0/head_circumference|magnitude\": 50,\n    \"smart_growth_report/head_circumference/any_event:0/head_circumference|unit\": \"cm\",\n    \"smart_growth_report/body_mass_index/any_event:0/body_mass_index|magnitude\": 17.2,\n    \"smart_growth_report/body_mass_index/any_event:0/body_mass_index|unit\": \"kg/m2\",\n    \"smart_growth_report/skeletal_age/any_event:0/skeletal_age\": \"P6Y\"\n}\n"
             },
             "description": ""
           },
