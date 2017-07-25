@@ -931,7 +931,34 @@
           "_postman_id": "59f48489-819d-c3ec-db10-b6c6e9588618",
           "name": "Get ehrStatus from subjectId",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/ehr/?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/ehr/?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "ehr",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "subjectId",
+                  "value": "{{subjectId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "subjectNamespace",
+                  "value": "{{subjectNamespace}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
