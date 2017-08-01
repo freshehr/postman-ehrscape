@@ -1427,7 +1427,27 @@
           "_postman_id": "7ae9e1ff-9fe1-4e52-e83a-debb46b395f4",
           "name": "All Ehrs in domain",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/query?aql=select e/ehr_id/value as ehrId from EHR e",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/query?aql=select e/ehr_id/value as ehrId, e/ehr_status/subject/external_ref/id/value as subjectId, e/ehr_status/subject/external_ref/namespace as subjectNamespace from EHR e",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "query"
+              ],
+              "query": [
+                {
+                  "key": "aql",
+                  "value": "select e/ehr_id/value as ehrId, e/ehr_status/subject/external_ref/id/value as subjectId, e/ehr_status/subject/external_ref/namespace as subjectNamespace from EHR e",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
