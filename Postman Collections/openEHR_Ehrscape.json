@@ -1886,7 +1886,7 @@
         },
         {
           "_postman_id": "784f8094-d8b1-a56d-1e73-b4ed9436a4fa",
-          "name": "Get example FLAT INPUT RAW",
+          "name": "Get example FLAT INPUT",
           "event": [
             {
               "listen": "prerequest",
