@@ -644,39 +644,6 @@
           "response": []
         },
         {
-          "_postman_id": "0d314017-d783-7deb-9844-27dc726cbd5f",
-          "name": "Delete Composition",
-          "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "{{Authorization}}",
-                "description": ""
-              },
-              {
-                "key": "{{SessionHeader}}",
-                "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "e772d661-e35a-87a6-ebe0-bf9137329830",
           "name": "Update Composition JSON RAW",
           "request": {
@@ -708,6 +675,39 @@
               "mode": "raw",
               "raw": ""
             },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0d314017-d783-7deb-9844-27dc726cbd5f",
+          "name": "Delete Composition",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "description": ""
+              },
+              {
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}",
+                "description": ""
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
             "description": ""
           },
           "response": []
