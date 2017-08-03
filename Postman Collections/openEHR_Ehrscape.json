@@ -1783,7 +1783,7 @@
         },
         {
           "_postman_id": "195d6365-5a60-3098-8a2d-bab4975b1e77",
-          "name": "Upload template",
+          "name": "Upload operational template XML",
           "event": [
             {
               "listen": "prerequest",
