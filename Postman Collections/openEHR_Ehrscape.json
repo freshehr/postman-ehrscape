@@ -1738,7 +1738,7 @@
         },
         {
           "_postman_id": "1a6262a6-ce96-e397-4db7-ad3fc0735313",
-          "name": "Get web template",
+          "name": "Get web template JSON",
           "event": [
             {
               "listen": "prerequest",
