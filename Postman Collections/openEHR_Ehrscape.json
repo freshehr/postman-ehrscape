@@ -1876,7 +1876,7 @@
         },
         {
           "_postman_id": "ac2f345f-80ca-4bfb-c75c-41fc54fce524",
-          "name": "Get example FLAT OUTPUT",
+          "name": "Get example composition FLAT OUTPUT",
           "event": [
             {
               "listen": "test",
