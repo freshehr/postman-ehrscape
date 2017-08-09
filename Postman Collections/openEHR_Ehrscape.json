@@ -1042,6 +1042,11 @@
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
                 "description": ""
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}",
+                "description": ""
               }
             ],
             "body": {},
@@ -1069,6 +1074,11 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
+                "description": ""
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
@@ -1100,6 +1110,11 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
+                "description": ""
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
