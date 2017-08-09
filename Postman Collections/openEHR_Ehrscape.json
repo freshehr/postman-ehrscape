@@ -1799,7 +1799,27 @@
           "_postman_id": "4dd45af0-264c-9e55-9fd4-e162799a3588",
           "name": "EtherCis SQL query",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/query?sql=select id from ehr.composition;",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/query?sql=select id from ehr.composition;",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "query"
+              ],
+              "query": [
+                {
+                  "key": "sql",
+                  "value": "select id from ehr.composition;",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -1810,11 +1830,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
