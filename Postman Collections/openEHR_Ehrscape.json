@@ -505,7 +505,45 @@
           "_postman_id": "f40f0dd3-e5cf-5cbf-534b-65bec28e8901",
           "name": "Commit Composition JSON STRUCTURED",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition?ehrId={{ehrId}}&templateId={{templateId}}&committerName=handi&format=STRUCTURED",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition?ehrId={{ehrId}}&templateId={{templateId}}&committerName=handi&format=STRUCTURED",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition"
+              ],
+              "query": [
+                {
+                  "key": "ehrId",
+                  "value": "{{ehrId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "templateId",
+                  "value": "{{templateId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "committerName",
+                  "value": "handi",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "format",
+                  "value": "STRUCTURED",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "POST",
             "header": [
               {
@@ -521,11 +559,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
