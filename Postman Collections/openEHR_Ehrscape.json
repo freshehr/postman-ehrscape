@@ -1794,49 +1794,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "4dd45af0-264c-9e55-9fd4-e162799a3588",
-          "name": "EtherCis SQL query",
-          "request": {
-            "url": {
-              "raw": "{{openEhrApi}}/rest/v1/query?sql=select id from ehr.composition;",
-              "auth": {},
-              "host": [
-                "{{openEhrApi}}"
-              ],
-              "path": [
-                "rest",
-                "v1",
-                "query"
-              ],
-              "query": [
-                {
-                  "key": "sql",
-                  "value": "select id from ehr.composition;",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authorization}}",
-                "description": ""
-              },
-              {
-                "key": "{{SessionHeader}}",
-                "value": "{{Ehr-Session}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "Run a 'native' EtherCis query. Not supported by Think!Ehr."
-          },
-          "response": []
         }
       ]
     },
