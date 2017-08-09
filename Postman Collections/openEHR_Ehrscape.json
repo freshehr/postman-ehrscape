@@ -643,7 +643,39 @@
           "_postman_id": "191c88e3-ea72-0ea4-62f8-5a97521c08f4",
           "name": "Commit Composition XML RAW",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition?templateId={{templateId}}&ehrId={{ehrId}}&format=RAW",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition?templateId={{templateId}}&ehrId={{ehrId}}&format=RAW",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition"
+              ],
+              "query": [
+                {
+                  "key": "templateId",
+                  "value": "{{templateId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "ehrId",
+                  "value": "{{ehrId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "format",
+                  "value": "RAW",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "POST",
             "header": [
               {
@@ -659,11 +691,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
