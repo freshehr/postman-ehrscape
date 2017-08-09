@@ -917,7 +917,36 @@
           "_postman_id": "b880751a-9fee-ec7b-6ad9-804d4c7ba226",
           "name": "Query Demographics for matching Party",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/demographics/party/query/?lastNames=*cox*&firstNames=*ivor*",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/demographics/party/query/?lastNames=*cox*&firstNames=*ivor*",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "demographics",
+                "party",
+                "query",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "lastNames",
+                  "value": "*cox*",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "firstNames",
+                  "value": "*ivor*",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -933,11 +962,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
@@ -950,7 +974,30 @@
           "_postman_id": "618efd76-478a-bf07-12b0-5c2e34e8450c",
           "name": "Query Demographics Party via NHSNumber",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/demographics/party/query/?uk.nhs.nhs_number={{nhsNumber}}",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/demographics/party/query/?uk.nhs.nhs_number={{nhsNumber}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "demographics",
+                "party",
+                "query",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "uk.nhs.nhs_number",
+                  "value": "{{nhsNumber}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -966,11 +1013,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
@@ -999,11 +1041,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
