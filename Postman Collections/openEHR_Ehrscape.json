@@ -1358,7 +1358,7 @@
               },
               {
                 "key": "Content-Type",
-                "value": "application/xml",
+                "value": "application/json",
                 "description": ""
               }
             ],
