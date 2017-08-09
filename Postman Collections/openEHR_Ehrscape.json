@@ -1147,7 +1147,39 @@
           "_postman_id": "255eef00-bc47-9242-1828-796d017b6642",
           "name": "Create new EHR, linked to subjectId",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/ehr?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}&commiterName={{committerName}}",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/ehr?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}&commiterName={{committerName}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "ehr"
+              ],
+              "query": [
+                {
+                  "key": "subjectId",
+                  "value": "{{subjectId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "subjectNamespace",
+                  "value": "{{subjectNamespace}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "commiterName",
+                  "value": "{{committerName}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "POST",
             "header": [
               {
@@ -1163,11 +1195,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
