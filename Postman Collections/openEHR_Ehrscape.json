@@ -823,7 +823,35 @@
           "_postman_id": "e772d661-e35a-87a6-ebe0-bf9137329830",
           "name": "Update Composition JSON RAW",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition/a604915c-93f6-45da-aa0b-f4e0e220482a::handi.ehrscape.com::1/?format=RAW&templateId={{templateId}}",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition/a604915c-93f6-45da-aa0b-f4e0e220482a::handi.ehrscape.com::1/?format=RAW&templateId={{templateId}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition",
+                "a604915c-93f6-45da-aa0b-f4e0e220482a::handi.ehrscape.com::1",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "format",
+                  "value": "RAW",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "templateId",
+                  "value": "{{templateId}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "PUT",
             "header": [
               {
@@ -839,11 +867,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
