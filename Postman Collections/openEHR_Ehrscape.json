@@ -76,6 +76,39 @@
           "response": []
         },
         {
+          "_postman_id": "577b707b-0eeb-c9ec-4f82-ed69cefd6006",
+          "name": "Read Composition JSON STRUCTURED",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=STRUCTURED",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "description": ""
+              },
+              {
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}",
+                "description": ""
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "90541934-340d-f285-a177-2dda7c18eeed",
           "name": "Read Composition JSON RAW",
           "request": {
@@ -250,39 +283,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "577b707b-0eeb-c9ec-4f82-ed69cefd6006",
-          "name": "Read Composition JSON STRUCTURED",
-          "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=STRUCTURED",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "{{Authorization}}",
-                "description": ""
-              },
-              {
-                "key": "{{SessionHeader}}",
-                "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
