@@ -1374,7 +1374,29 @@
           "_postman_id": "8a85ad1d-0158-2b35-782f-f100f4580905",
           "name": "Retrieve a form by name and version",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/form/{{formName}}/{{formVersion}}?resources=ALL",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/form/{{formName}}/{{formVersion}}?resources=ALL",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "form",
+                "{{formName}}",
+                "{{formVersion}}"
+              ],
+              "query": [
+                {
+                  "key": "resources",
+                  "value": "ALL",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -1390,11 +1412,6 @@
               {
                 "key": "Content-Type",
                 "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
