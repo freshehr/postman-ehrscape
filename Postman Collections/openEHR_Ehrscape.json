@@ -1846,7 +1846,35 @@
             }
           ],
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/template/{{templateId}}/example?format=FLAT&exampleFilter=INPUT",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/template/{{templateId}}/example?format=FLAT&exampleFilter=INPUT",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "template",
+                "{{templateId}}",
+                "example"
+              ],
+              "query": [
+                {
+                  "key": "format",
+                  "value": "FLAT",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "exampleFilter",
+                  "value": "INPUT",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -1862,11 +1890,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
