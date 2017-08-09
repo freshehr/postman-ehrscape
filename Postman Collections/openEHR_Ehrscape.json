@@ -79,7 +79,28 @@
           "_postman_id": "577b707b-0eeb-c9ec-4f82-ed69cefd6006",
           "name": "Read Composition JSON STRUCTURED",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=STRUCTURED",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=STRUCTURED",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition",
+                "{{compositionId}}"
+              ],
+              "query": [
+                {
+                  "key": "format",
+                  "value": "STRUCTURED",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -95,11 +116,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
