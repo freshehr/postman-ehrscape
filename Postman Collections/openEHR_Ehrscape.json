@@ -1144,6 +1144,42 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "255eef00-bc47-9242-1828-796d017b6642",
+          "name": "Create new EHR, linked to subjectId",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/ehr?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}&commiterName={{committerName}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Authorization}}",
+                "description": ""
+              },
+              {
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}",
+                "description": ""
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \t\"subjectId\": \"{{subjectId}}\",\n  \t\"subjectNamespace\": \"{{subjectNamespace}}\",\n\t\"queryable\": \"true\",\n\t\"modifiable\": \"true\",\n\t\"otherDetails\": {\n      \"@class\": \"ITEM_TREE\",\n      \"items\": [\n        {\n          \"@class\": \"CLUSTER\",\n          \"archetype_details\": {\n            \"@class\": \"ARCHETYPED\",\n            \"archetype_id\": {\n              \"@class\": \"ARCHETYPE_ID\",\n              \"value\": \"openEHR-EHR-CLUSTER.person_anonymised_parent.v1\"\n            },\n            \"rm_version\": \"1.0.1\"\n          },\n          \"archetype_node_id\": \"openEHR-EHR-CLUSTER.person_anonymised_parent.v1\",\n          \"items\": [\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Administrative Gender\"\n              },\n              \"archetype_node_id\": \"at0001\",\n              \"value\": {\n                \"@class\": \"DV_CODED_TEXT\",\n                \"value\": \"MALE\",\n                \"defining_code\": {\n                  \"@class\": \"CODE_PHRASE\",\n                  \"terminology_id\": {\n                    \"@class\": \"TERMINOLOGY_ID\",\n                    \"value\": \"local\"\n                  },\n                  \"code_string\": \"at0009\"\n                }\n              }\n            },\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Birth Sex\"\n              },\n              \"archetype_node_id\": \"at0002\",\n              \"value\": {\n                \"@class\": \"DV_CODED_TEXT\",\n                \"value\": \"Male\",\n                \"defining_code\": {\n                  \"@class\": \"CODE_PHRASE\",\n                  \"terminology_id\": {\n                    \"@class\": \"TERMINOLOGY_ID\",\n                    \"value\": \"local\"\n                  },\n                  \"code_string\": \"at0009\"\n                }\n              }\n            },\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Vital Status\"\n              },\n              \"archetype_node_id\": \"at0003\",\n              \"value\": {\n                \"@class\": \"DV_CODED_TEXT\",\n                \"value\": \"Alive\",\n                \"defining_code\": {\n                  \"@class\": \"CODE_PHRASE\",\n                  \"terminology_id\": {\n                    \"@class\": \"TERMINOLOGY_ID\",\n                    \"value\": \"local\"\n                  },\n                  \"code_string\": \"at0004\"\n                }\n              }\n            },\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Birth Year\"\n              },\n              \"archetype_node_id\": \"at0014\",\n              \"value\": {\n                \"@class\": \"DV_DATE\",\n                \"value\": \"1944\"\n              }\n            }\n          ]\n        }\n      ]\n    }\n}"
+            },
+            "description": "Creates a new EHR and returns its ID.\n\nThe caller can specify an external subject ID and subject namespace to whom the new EHR will belong.\n\nAn example of a successful response body:\n\n``\n{\n  \"meta\": {\n    \"href\": \"http://localhost:8082/rest/v1/ehr/f77f9b4a-cfda-414d-aa6c-4f78bcac7601\"  \n  },\n  \"action\": \"CREATE\",  \n  \"ehrId\": \"f77f9b4a-cfda-414d-aa6c-4f78bcac7601\"  \n}\n``"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "59f48489-819d-c3ec-db10-b6c6e9588618",
           "name": "Get ehrStatus from subjectId",
           "request": {
@@ -1259,42 +1295,6 @@
               "raw": " {\n        \"subjectId\": \"9999999000\",\n        \"subjectNamespace\": \"uk.nhs.nhs_number\",\n        \"queryable\": true,\n        \"modifiable\": true,\n        \"otherDetails\": {\n            \"@class\": \"ITEM_TREE\",\n            \"items\": [\n                {\n                    \"@class\": \"CLUSTER\",\n                    \"archetype_details\": {\n                        \"@class\": \"ARCHETYPED\",\n                        \"archetype_id\": {\n                            \"@class\": \"ARCHETYPE_ID\",\n                            \"value\": \"openEHR-EHR-CLUSTER.person_anonymised_parent.v1\"\n                        },\n                        \"rm_version\": \"1.0.1\"\n                    },\n                    \"archetype_node_id\": \"openEHR-EHR-CLUSTER.person_anonymised_parent.v1\",\n                    \"items\": [\n                        {\n                            \"@class\": \"ELEMENT\",\n                            \"name\": {\n                                \"@class\": \"DV_TEXT\",\n                                \"value\": \"Administrative Gender\"\n                            },\n                            \"archetype_node_id\": \"at0001\",\n                            \"value\": {\n                                \"@class\": \"DV_CODED_TEXT\",\n                                \"value\": \"Male\",\n                                \"defining_code\": {\n                                    \"@class\": \"CODE_PHRASE\",\n                                    \"terminology_id\": {\n                                        \"@class\": \"TERMINOLOGY_ID\",\n                                        \"value\": \"local\"\n                                    },\n                                    \"code_string\": \"at0009\"\n                                }\n                            }\n                        },\n                        {\n                            \"@class\": \"ELEMENT\",\n                            \"name\": {\n                                \"@class\": \"DV_TEXT\",\n                                \"value\": \"Birth Sex\"\n                            },\n                            \"archetype_node_id\": \"at0002\",\n                            \"value\": {\n                                \"@class\": \"DV_CODED_TEXT\",\n                                \"value\": \"Male\",\n                                \"defining_code\": {\n                                    \"@class\": \"CODE_PHRASE\",\n                                    \"terminology_id\": {\n                                        \"@class\": \"TERMINOLOGY_ID\",\n                                        \"value\": \"local\"\n                                    },\n                                    \"code_string\": \"at0009\"\n                                }\n                            }\n                        },\n                        {\n                            \"@class\": \"ELEMENT\",\n                            \"name\": {\n                                \"@class\": \"DV_TEXT\",\n                                \"value\": \"Vital Status\"\n                            },\n                            \"archetype_node_id\": \"at0003\",\n                            \"value\": {\n                                \"@class\": \"DV_CODED_TEXT\",\n                                \"value\": \"Alive\",\n                                \"defining_code\": {\n                                    \"@class\": \"CODE_PHRASE\",\n                                    \"terminology_id\": {\n                                        \"@class\": \"TERMINOLOGY_ID\",\n                                        \"value\": \"local\"\n                                    },\n                                    \"code_string\": \"at0004\"\n                                }\n                            }\n                        },\n                        {\n                            \"@class\": \"ELEMENT\",\n                            \"name\": {\n                                \"@class\": \"DV_TEXT\",\n                                \"value\": \"Birth Year\"\n                            },\n                            \"archetype_node_id\": \"at0014\",\n                            \"value\": {\n                                \"@class\": \"DV_DATE\",\n                                \"value\": \"1944\"\n                            }\n                        }\n                    ]\n                }\n            ]\n        }\n    }"
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "255eef00-bc47-9242-1828-796d017b6642",
-          "name": "Create new EHR, linked to subjectId",
-          "request": {
-            "url": "{{openEhrApi}}/rest/v1/ehr?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}&commiterName={{committerName}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "{{Authorization}}",
-                "description": ""
-              },
-              {
-                "key": "{{SessionHeader}}",
-                "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \t\"subjectId\": \"{{subjectId}}\",\n  \t\"subjectNamespace\": \"{{subjectNamespace}}\",\n\t\"queryable\": \"true\",\n\t\"modifiable\": \"true\",\n\t\"otherDetails\": {\n      \"@class\": \"ITEM_TREE\",\n      \"items\": [\n        {\n          \"@class\": \"CLUSTER\",\n          \"archetype_details\": {\n            \"@class\": \"ARCHETYPED\",\n            \"archetype_id\": {\n              \"@class\": \"ARCHETYPE_ID\",\n              \"value\": \"openEHR-EHR-CLUSTER.person_anonymised_parent.v1\"\n            },\n            \"rm_version\": \"1.0.1\"\n          },\n          \"archetype_node_id\": \"openEHR-EHR-CLUSTER.person_anonymised_parent.v1\",\n          \"items\": [\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Administrative Gender\"\n              },\n              \"archetype_node_id\": \"at0001\",\n              \"value\": {\n                \"@class\": \"DV_CODED_TEXT\",\n                \"value\": \"MALE\",\n                \"defining_code\": {\n                  \"@class\": \"CODE_PHRASE\",\n                  \"terminology_id\": {\n                    \"@class\": \"TERMINOLOGY_ID\",\n                    \"value\": \"local\"\n                  },\n                  \"code_string\": \"at0009\"\n                }\n              }\n            },\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Birth Sex\"\n              },\n              \"archetype_node_id\": \"at0002\",\n              \"value\": {\n                \"@class\": \"DV_CODED_TEXT\",\n                \"value\": \"Male\",\n                \"defining_code\": {\n                  \"@class\": \"CODE_PHRASE\",\n                  \"terminology_id\": {\n                    \"@class\": \"TERMINOLOGY_ID\",\n                    \"value\": \"local\"\n                  },\n                  \"code_string\": \"at0009\"\n                }\n              }\n            },\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Vital Status\"\n              },\n              \"archetype_node_id\": \"at0003\",\n              \"value\": {\n                \"@class\": \"DV_CODED_TEXT\",\n                \"value\": \"Alive\",\n                \"defining_code\": {\n                  \"@class\": \"CODE_PHRASE\",\n                  \"terminology_id\": {\n                    \"@class\": \"TERMINOLOGY_ID\",\n                    \"value\": \"local\"\n                  },\n                  \"code_string\": \"at0004\"\n                }\n              }\n            },\n            {\n              \"@class\": \"ELEMENT\",\n              \"name\": {\n                \"@class\": \"DV_TEXT\",\n                \"value\": \"Birth Year\"\n              },\n              \"archetype_node_id\": \"at0014\",\n              \"value\": {\n                \"@class\": \"DV_DATE\",\n                \"value\": \"1944\"\n              }\n            }\n          ]\n        }\n      ]\n    }\n}"
-            },
-            "description": "Creates a new EHR and returns its ID.\n\nThe caller can specify an external subject ID and subject namespace to whom the new EHR will belong.\n\nAn example of a successful response body:\n\n``\n{\n  \"meta\": {\n    \"href\": \"http://localhost:8082/rest/v1/ehr/f77f9b4a-cfda-414d-aa6c-4f78bcac7601\"  \n  },\n  \"action\": \"CREATE\",  \n  \"ehrId\": \"f77f9b4a-cfda-414d-aa6c-4f78bcac7601\"  \n}\n``"
           },
           "response": []
         }
