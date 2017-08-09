@@ -1360,11 +1360,6 @@
                 "key": "Content-Type",
                 "value": "application/xml",
                 "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
-                "description": ""
               }
             ],
             "body": {
