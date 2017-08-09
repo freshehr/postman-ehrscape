@@ -706,7 +706,34 @@
           "_postman_id": "081708d8-df0a-94ba-0148-65dba67459dd",
           "name": "Update Composition JSON FLAT",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=FLAT&templateId={{templateId}}",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=FLAT&templateId={{templateId}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition",
+                "{{compositionId}}"
+              ],
+              "query": [
+                {
+                  "key": "format",
+                  "value": "FLAT",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "templateId",
+                  "value": "{{templateId}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "PUT",
             "header": [
               {
@@ -722,11 +749,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
