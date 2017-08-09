@@ -1219,11 +1219,6 @@
                 "key": "Content-Type",
                 "value": "application/json",
                 "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
-                "description": ""
               }
             ],
             "body": {},
