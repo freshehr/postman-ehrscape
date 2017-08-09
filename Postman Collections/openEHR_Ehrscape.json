@@ -213,7 +213,28 @@
           "_postman_id": "3cd2a90d-4251-d350-be9e-5606cf0569d0",
           "name": "Read Composition XML RAW",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=RAW",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition/{{compositionId}}?format=RAW",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition",
+                "{{compositionId}}"
+              ],
+              "query": [
+                {
+                  "key": "format",
+                  "value": "RAW",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -229,11 +250,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
