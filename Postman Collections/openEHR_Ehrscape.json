@@ -574,7 +574,45 @@
           "_postman_id": "a76f4e28-b340-9b00-cb50-670493a73819",
           "name": "Commit Composition JSON RAW",
           "request": {
-            "url": "{{openEhrApi}}/rest/v1/composition?ehrId={{ehrId}}&templateId={{templateId}}&committerName=handi&format=RAW",
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/composition?ehrId={{ehrId}}&templateId={{templateId}}&committerName=handi&format=RAW",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "composition"
+              ],
+              "query": [
+                {
+                  "key": "ehrId",
+                  "value": "{{ehrId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "templateId",
+                  "value": "{{templateId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "committerName",
+                  "value": "handi",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "format",
+                  "value": "RAW",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "POST",
             "header": [
               {
@@ -590,11 +628,6 @@
               {
                 "key": "{{SessionHeader}}",
                 "value": "{{Ehr-Session}}",
-                "description": ""
-              },
-              {
-                "key": "Auth-Token",
-                "value": "{{Auth-Token}}",
                 "description": ""
               }
             ],
