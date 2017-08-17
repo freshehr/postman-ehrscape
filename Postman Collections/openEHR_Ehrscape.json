@@ -2231,6 +2231,236 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "d2fc102b-cbd2-4935-74ee-23e5bc52c8ed",
+      "name": "demographics copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "0d7e2641-b93f-381a-91a6-0236172aec25",
+          "name": "Query Demographics for matching Party",
+          "request": {
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/demographics/party/query/?lastNames=*cox*&firstNames=*ivor*",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "demographics",
+                "party",
+                "query",
+                ""
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "lastNames",
+                  "value": "*cox*"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "firstNames",
+                  "value": "*ivor*"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2645adc8-12bc-807a-cc90-7cc0c42d4eea",
+          "name": "Query Demographics Party via NHSNumber",
+          "request": {
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/demographics/party/query/?uk.nhs.nhs_number={{nhsNumber}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "demographics",
+                "party",
+                "query",
+                ""
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "uk.nhs.nhs_number",
+                  "value": "{{nhsNumber}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "416bb463-7346-3bc9-3c08-f610ffb46454",
+          "name": "Get Demographics Party by partyID",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/demographics/party/{{partyId}}",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e24953eb-2872-b784-69db-e37bafb12129",
+          "name": "Create Demographics Party",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/demographics/party",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method saves a new party, specified in the JSON request body, to the remote demographics service.\nA request body should look something like this:\n\n``{\n    \"firstNames\": \"Jordan\",\n    \"lastNames\": \"Nolan\",\n    \"gender\": \"MALE\",\n    \"dateOfBirth\": \"1990-03-09T00:00:00.000Z\",\n    \"address\": {      \n      \"address\": \"Toronto, Canada\"\n    },\n    \"partyAdditionalInfo\": [\n      {\n        \"key\": \"pet\",\n        \"value\": \"dog\"\n      },\n      {\n        \"key\": \"title\",\n        \"value\": \"Mr\"\n      }      \n    ]\n  }\n``\nSuccessful response:\n\n``{\n  \"meta\": {\n    \"href\": \"http://localhost:8082/rest/v1/demographics/party/16\"\n  },\n  \"action\": \"CREATE\"\n}\n``"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fb4d99f3-ddb8-e24c-0879-3337fe3b484e",
+          "name": "Get Demographics Party by ehrId",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/demographics/ehr/{{ehrId}}/party",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "56943826-412b-7817-e2be-07dc4283da17",
+          "name": "Delete Demographics Party by partyID",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/demographics/party/{{partyId}}",
+            "method": "DELETE",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {},
+            "description": "This method deletes a party denoted by its id from the remote demographics store, along with all its sub-entities (such as additional info)."
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
