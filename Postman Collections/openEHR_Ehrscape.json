@@ -8,36 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "759ad527-611c-9cac-749f-c16cc47dd0ec",
-      "name": "SMARTPlatforms",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "c6dcc20a-5301-25d0-3636-199b7184e5c3",
-          "name": "Retrieve SMART Records by EhrId",
-          "request": {
-            "url": "{{openEhrApi}}/rest/v1/smart/records/{{ehrId}}/{{smartModelName}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{{Authorization}}",
-                "description": ""
-              },
-              {
-                "key": "{{SessionHeader}}",
-                "value": "{{Ehr-Session}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "062301bb-ae83-fa86-431b-9322ee8b87b4",
       "name": "SMARTPlatforms copy",
       "description": "",
