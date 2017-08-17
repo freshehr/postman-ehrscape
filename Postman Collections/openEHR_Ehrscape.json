@@ -13,6 +13,37 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "854f4e43-1e68-e3b4-deea-b16f1c1fe4c2",
+          "name": "SMARTPlatforms",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "72a120d8-4a2f-bbfc-44df-ea4ae381607c",
+              "name": "Retrieve SMART Records by EhrId",
+              "request": {
+                "url": "{{openEhrApi}}/rest/v1/smart/records/{{ehrId}}/{{smartModelName}}",
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "",
+                    "key": "Authorization",
+                    "value": "{{Authorization}}"
+                  },
+                  {
+                    "description": "",
+                    "key": "{{SessionHeader}}",
+                    "value": "{{Ehr-Session}}"
+                  }
+                ],
+                "body": {},
+                "description": ""
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
           "_postman_id": "784cacc1-2206-721b-72f6-c91817f02073",
           "name": "Read Composition JSON FLAT",
           "request": {
