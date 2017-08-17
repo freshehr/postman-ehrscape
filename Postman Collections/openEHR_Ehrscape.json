@@ -38,6 +38,36 @@
       ]
     },
     {
+      "_postman_id": "062301bb-ae83-fa86-431b-9322ee8b87b4",
+      "name": "SMARTPlatforms copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "e9b9f905-570a-204d-f9d9-01d207df33c6",
+          "name": "Retrieve SMART Records by EhrId",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/smart/records/{{ehrId}}/{{smartModelName}}",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "8376fa2e-37ee-6118-57b3-bba076e087de",
       "name": "composition",
       "description": "",
@@ -2227,36 +2257,6 @@
             ],
             "body": {},
             "description": "Resource Url\n\nhttps://ehrscape.code-4-health.org/rest/v1/template/{templateId}/example\nParameters\n\nParameter\tValue\tDescription\tParameter Type\tData Type\ntemplateId\nrequired\n\tThe ID of the template to load.\tpath\tstring\ndefaultLanguage\noptional\n\tThe default language to generate the web template with.\tquery\tstring\nlanguages\noptional\n\tOther languages to include in the web template, separated by a comma.\tquery\tstring\nformat\noptional\n\nThe format of JSON representation of the example composition to return. Default: FLAT.\tquery\tenum\nexampleFilter\noptional\n\nThe type of example to produce - intended for input (sent to the server), output (received back from the server) etc.\tquery\tenum\nTry it out!\nImplementation Notes\n\nReturns an example of data values for a ThinkEhr web template.\n\nThis method will show all the web template paths that can be filled out in order to successfully save a composition in the web template format. It will do its best to generate legal exampledata values for those paths, taking into account the data type and validation constraints.\n\nTwo parameters control the output of this call. The format parameter controls whether the produced output will be the web template composition values in either the FLAT or the STRUCTURED (hierarchical) JSON format. The exampleFilter parameter controls whether the example will show the values as they would be submitted to the server (INPUT) or received from the server (OUTPUT), since the latter one is more detailed.\n\nThe two language parameters determine the languages that the web template will be generated with before its example values will be produced and returned. See the documentation for the {templateId} call for more information on web template languages.\n"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "062301bb-ae83-fa86-431b-9322ee8b87b4",
-      "name": "SMARTPlatforms copy",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "e9b9f905-570a-204d-f9d9-01d207df33c6",
-          "name": "Retrieve SMART Records by EhrId",
-          "request": {
-            "url": "{{openEhrApi}}/rest/v1/smart/records/{{ehrId}}/{{smartModelName}}",
-            "method": "GET",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "{{Authorization}}"
-              },
-              {
-                "description": "",
-                "key": "{{SessionHeader}}",
-                "value": "{{Ehr-Session}}"
-              }
-            ],
-            "body": {},
-            "description": ""
           },
           "response": []
         }
