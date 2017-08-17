@@ -1293,6 +1293,190 @@
       ]
     },
     {
+      "_postman_id": "21748965-c269-0485-0904-f72645a16eb3",
+      "name": "ehr copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "e0e5def1-4670-eebf-05a5-18e6d000a299",
+          "name": "Create new EHR, linked to subjectId",
+          "request": {
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/ehr?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}&commiterName={{committerName}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "ehr"
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "subjectId",
+                  "value": "{{subjectId}}"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "subjectNamespace",
+                  "value": "{{subjectNamespace}}"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "commiterName",
+                  "value": "{{committerName}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "Creates a new EHR and returns its ID.\n\nThe caller can specify an external subject ID and subject namespace to whom the new EHR will belong.\n\nAn example of a successful response body:\n\n``\n{\n  \"meta\": {\n    \"href\": \"http://localhost:8082/rest/v1/ehr/f77f9b4a-cfda-414d-aa6c-4f78bcac7601\"  \n  },\n  \"action\": \"CREATE\",  \n  \"ehrId\": \"f77f9b4a-cfda-414d-aa6c-4f78bcac7601\"  \n}\n``"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3162fe7b-4438-fe93-459d-f68ef81fb47b",
+          "name": "Get ehrStatus from subjectId",
+          "request": {
+            "url": {
+              "raw": "{{openEhrApi}}/rest/v1/ehr/?subjectId={{subjectId}}&subjectNamespace={{subjectNamespace}}",
+              "auth": {},
+              "host": [
+                "{{openEhrApi}}"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "ehr",
+                ""
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "subjectId",
+                  "value": "{{subjectId}}"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "subjectNamespace",
+                  "value": "{{subjectNamespace}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "742ff098-9e30-fdf9-cca0-6453da860fa9",
+          "name": "Get ehrStatus from ehrId",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/ehr/{{ehrId}}",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "faa09d6a-c9c3-3f88-7a70-6f0405d8b0f0",
+          "name": "Update ehrStatus",
+          "request": {
+            "url": "{{openEhrApi}}/rest/v1/ehr/status/{{ehrId}}",
+            "method": "PUT",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "{{Authorization}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "{{SessionHeader}}",
+                "value": "{{Ehr-Session}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "7e3103f4-1cf3-b7c0-50cd-655073c37701",
       "name": "forms",
       "description": "",
